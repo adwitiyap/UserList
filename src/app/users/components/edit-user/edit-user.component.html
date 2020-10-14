@@ -1,0 +1,221 @@
+<div *ngIf="!isSavedClicked"
+    [formGroup]="userForm">
+    <div class="field-container">
+        <div class="label">Name</div>
+        <div>
+            <input type="text"
+                formControlName="name" />
+        </div>
+    </div>
+
+    <div class="field-container">
+        <div class="label">User Name</div>
+        <div>
+            <input type="text"
+                formControlName="userName" />
+        </div>
+    </div>
+
+    <div class="field-container">
+        <div class="label">Email</div>
+        <div>
+            <input type="text"
+                formControlName="email" />
+        </div>
+    </div>
+
+    <div class="field-container">
+        <div class="label">Address Street</div>
+        <input type="text"
+            formControlName="addressStreet" />
+    </div>
+
+    <div class="field-container">
+        <div class="label">Address Suite</div>
+        <input type="text"
+            formControlName="addressSuite" />
+    </div>
+
+    <div class="field-container">
+        <div class="label">Address City</div>
+        <input type="text"
+            formControlName="addressCity" />
+    </div>
+
+    <div class="field-container">
+        <div class="label">Address Zip</div>
+        <input type="text"
+            formControlName="addressZip" />
+    </div>
+
+    <div class="field-container">
+        <div class="label">Address Geo Lat</div>
+        <input type="text"
+            formControlName="addressGeoLat" />
+    </div>
+
+    <div class="field-container">
+        <div class="label">Address Geo Long</div>
+        <input type="text"
+            formControlName="addressGeoLong" />
+    </div>
+
+    <div class="field-container">
+        <div class="label">Phone</div>
+        <div>
+            <input type="text"
+                formControlName="phone" />
+        </div>
+    </div>
+
+    <div class="field-container">
+        <div class="label">Website</div>
+        <div>
+            <input type="text"
+                formControlName="website" />
+        </div>
+    </div>
+
+    <div class="field-container">
+        <div class="label">Company Name</div>
+        <div>
+            <input type="text"
+                formControlName="companyName" />
+        </div>
+    </div>
+
+    <div class="field-container">
+        <div class="label">Company CatchPhrase</div>
+        <div>
+            <input type="text"
+                formControlName="companyCatch" />
+        </div>
+    </div>
+
+    <div class="field-container">
+        <div class="label">Company BS</div>
+        <div>
+            <input type="text"
+                formControlName="companyBs" />
+        </div>
+    </div>
+
+    <div class="container-btn">
+        <button class="edit-btn"
+            [disabled]="!userForm.dirty"
+            (click)="savePressed()">Save</button>
+    </div>
+</div>
+
+<!-- TODO: Code in following div should be abstracted out in a separate component-->
+<div *ngIf="isSavedClicked">
+
+    <div>Are you sure you want to save following changes?</div>
+
+    <div class="change">
+        <div *ngIf="this.userForm.controls.name.dirty">
+            <span>Name: </span>
+            <span>{{ this.user.name }} ==> {{ this.userForm.controls.name.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.username !== this.userForm.controls.userName.value">
+            <span>User Name: </span>
+            <span>{{ this.user.username }} ==> {{ this.userForm.controls.userName.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.email !== this.userForm.controls.email.value">
+            <span>Email: </span>
+            <span>{{ this.user.email }} ==> {{ this.userForm.controls.email.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.address.street !== this.userForm.controls.addressStreet.value">
+            <span>Address Street: </span>
+            <span>{{ this.user.address.street }} ==> {{ this.userForm.controls.addressStreet.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.address.suite !== this.userForm.controls.addressSuite.value">
+            <span>Address Suite: </span>
+            <span>{{ this.user.address.suite }} ==> {{ this.userForm.controls.addressSuite.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.address.city !== this.userForm.controls.addressCity.value">
+            <span>Address City: </span>
+            <span>{{ this.user.address.city }} ==> {{ this.userForm.controls.addressCity.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.address.zipcode !== this.userForm.controls.addressZip.value">
+            <span>Address Zip: </span>
+            <span>{{ this.user.address.zipcode }} ==> {{ this.userForm.controls.addressZip.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.address.geo.lat !== this.userForm.controls.addressGeoLat.value">
+            <span>Address Geo Lat: </span>
+            <span>{{ this.user.address.geo.lat }} ==> {{ this.userForm.controls.addressGeoLat.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.address.geo.lng !== this.userForm.controls.addressGeoLong.value">
+            <span>Address Geo Long: </span>
+            <span>{{ this.user.address.geo.lng }} ==> {{ this.userForm.controls.addressGeoLong.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.phone !== this.userForm.controls.phone.value">
+            <span>Phone: </span>
+            <span>{{ this.user.phone }} ==> {{ this.userForm.controls.phone.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.website !== this.userForm.controls.website.value">
+            <span>Website: </span>
+            <span>{{ this.user.website }} ==> {{ this.userForm.controls.website.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.company.name !== this.userForm.controls.companyName.value">
+            <span>Company Name: </span>
+            <span>{{ this.user.company.name }} ==> {{ this.userForm.controls.companyName.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.company.catchPhrase !== this.userForm.controls.companyCatch.value">
+            <span>Company CatchPhrase: </span>
+            <span>{{ this.user.company.catchPhrase }} ==> {{ this.userForm.controls.companyCatch.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <div *ngIf="this.user.company.bs !== this.userForm.controls.companyBs.value">
+            <span>Company BS: </span>
+            <span>{{ this.user.company.bs }} ==> {{ this.userForm.controls.companyBs.value }} </span>
+        </div>
+    </div>
+
+    <div class="change">
+        <button class="edit-btn"
+            [routerLink]="['/users']">Cancel</button>
+
+        <button class="edit-btn"
+            [routerLink]="['/users']"
+            (click)="save()">Confirm</button>
+    </div>
+</div>

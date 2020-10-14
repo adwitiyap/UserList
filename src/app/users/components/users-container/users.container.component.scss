@@ -1,0 +1,42 @@
+.field-container {
+    display: flex;
+    margin-top: 10px;
+}
+.label {
+    width: 100px;
+}
+
+.container-btn {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.cust-list {
+    display: flex;
+    justify-content: space-between;
+    background-color: darkgray;
+
+    margin-top: 20px;
+}
+
+.cust-data {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 20px;
+}
+
+.btn-container {
+    display: flex;
+}
+
+.upsert-btn {
+    margin-right: 10px;
+}
+
+.data-column {
+    width: 14%;
+}

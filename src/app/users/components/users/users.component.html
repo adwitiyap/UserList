@@ -1,0 +1,23 @@
+<div class="user-list">
+    <div *ngFor='let label of labels'>
+        <div>{{label}}</div>
+    </div>
+</div>
+
+<div>
+    <div class="user-data"
+        [ngClass]="{ 'updated': user.isUpdated  }"
+        *ngFor="let user of users|async;">
+        <div class="data-column">{{ user.name }}</div>
+        <div class="data-column">{{ user.username }}</div>
+        <div class="data-column">{{ user.email }}</div>
+        <div class="data-column">{{ user.address.street }}</div>
+        <div class="data-column">{{ user.phone }}</div>
+        <div class="data-column">{{ user.website }}</div>
+        <div class="data-column">{{ user.company.name }}</div>
+        <div class="data-column">
+            <a href=""
+                [routerLink]="['/edit', user.id]">Edit</a>
+        </div>
+    </div>
+</div>

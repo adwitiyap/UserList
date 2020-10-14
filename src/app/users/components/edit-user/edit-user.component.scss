@@ -1,0 +1,24 @@
+.field-container {
+    display: flex;
+    margin-top: 10px;
+
+    .label {
+        width: 100px;
+    }
+}
+
+.container-btn {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.edit-btn {
+    margin-right: 10px;
+}
+
+.change {
+    margin-top: 20px;
+}
