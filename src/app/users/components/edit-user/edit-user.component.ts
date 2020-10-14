@@ -11,8 +11,12 @@ import { User } from 'src/app/models/user-model';
 import { usersResponseState } from 'src/app/store/users.selectors';
 
 /* 
-    NOTE: This component should be broken down as per container-dumb philosophy. But not doing that in interest of time.
-    Demonstration of container-dumb componenent architecture has been made through "users-container" & "users" components
+    NOTES For reviewer:
+     1. This component should be broken down as per container-dumb philosophy. But not doing that in interest of time.
+        Demonstration of container-dumb componenent architecture has been made through "users-container" & "users" components
+
+    2. Display of "delta and its confirmation" needs to be abstracted out in a separate component and sould be displayed in some
+       sort of pop-up window, but again in interest of time writing all that code in this component itself
 */
 
 @Component({
